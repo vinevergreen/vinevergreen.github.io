@@ -20,7 +20,8 @@
 		<article>
 			<h1 id="uploading">uploading</h1>
 <p>the Evergreen tree comes pre-provisioned to upload its output to a GitHub Pages site. to do this, open a <a href="using-pub.html">terminal</a>, <code>cd</code> to the root of the Evergreen project, and run the command <code>./up.sh</code>.</p>
-<p>you will be prompted for a password. unless you have changed this through git's web interface (which you should when you have a chance; once you do, delete the <code>default-password</code> file), this is the password found in the <code>default-password</code> file at the root of the tree. type this password (note that the characters will not be displayed onscreen, not even as asterisks) and press <strong>Enter</strong>. when you are returned to a shell prompt, your site has been uploaded.</p>
+<p>the script uses an <em>OAuth token</em> to communicate with the GitHub server so you don't need to enter your password when you update the site. however, the default password to your GitHub account is stored in the <code>default-password</code> file; you should change this at <a href="https://github.com">GitHub</a> when you have the chance.</p>
+<p>if you don't need to check the local output before you update the site, you can use the command <code>./pub.pl; ./up.sh</code> to accomplish in one go.</p>
 
 		</article>
 	</div>
