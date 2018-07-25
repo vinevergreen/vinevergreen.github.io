@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Evergreen</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<h1>Evergreen</h1>
+		<h2>Vin's Collected Writings</h2>
+	</header>
+	<div class="inset">
+		<nav>
+			<a href="../index.html">Home</a>
+			<a href="../about.html">About</a>
+			<a href="../stories/">Stories</a>
+			
+		</nav>
+		<article>
+			<h1 id="using-pub-pl">using pub.pl</h1>
+<p>the <code>pub.pl</code> tool is what is called a <em>command line application</em>, a <em>terminal program</em>, or a <em>shell program</em>. this means that it has no graphical interface, and operates simply by reading and writing text to and from files and the keyboard.</p>
+<p>to interface with command line tools, we need to use a <em>terminal emulator</em>. on Mac OS X this is the Terminal app in the Utilities folder (<code>/Applications/Utilities/Terminal.app</code>). on newer versions of the OS, the Utilities folder is sometimes hidden; you can reach it by switching to the Finder, holding down <strong>Command</strong> and <strong>Shift</strong>, and pressing the <code>U</code> key. on Linux, this is a tool such as <code>gnome-terminal</code>, <code>mate-terminal</code>, or <code>urxvt</code>.</p>
+<p>once you've opened the terminal, there are a few core concepts you need to understand.</p>
+<h2 id="the-shell">the shell</h2>
+<p>the <em>shell</em> is the command-line application that starts running as soon as you load the terminal. it displays a prompt (by default, usually a string ending in <code>$</code>) and accepts <em>commands.</em> the shell handles basic file management tasks and launching other applications.</p>
+<p>you enter a command into a shell by typing it into the window and pressing the <strong>Return</strong> or <strong>Enter</strong> key. the command performs a task like moving a file or launching a program. when the command finishes, another prompt will be displayed. many commands do not print anything while they are running, so you will simply see a cursor sitting on a blank line until they terminate.</p>
+<h2 id="running--code-pub-pl--code-">running <code>pub.pl</code></h2>
+<p>the only commands you need to understand in order to run <code>pub.pl</code> is the <code>cd</code> command. the shell can be thought of a bit like a Finder window. a Finder window displays a view of a single folder and lets you take actions on the contents. in the shell's case, this folder is known as the <em>working directory.</em></p>
+<p>the <code>cd</code> command changes the working directory. it's the analogue of double-clicking on a folder. in order to run <code>pub.pl</code>, we need to change the working directory to the one that <code>pub,pl</code> is located in. the precise command needed varies depending on where you've put the folder containing your website. if it's in your home folder, you can reach it with the command <code>cd ~/evergreen</code>; if it's on your desktop, you can reach it with <code>cd ~/Desktop/evergreen</code>. if you've changed the name from <code>evergreen</code>, you should write that new name instead.</p>
+<p>(a useful trick is <em>shell autocomplete</em> — once you typed part of a name, you can press the <strong>Tab</strong> key and the shell will try to figure out what file or folder you meant.)</p>
+<p>once you've reached the right directory, you can run <code>pub.pl</code> and generate your site. you do this by entering <code>./pub.pl</code> at the prompt and pressing <strong>Enter</strong>. if you receive an error, try running <code>chmod +x pub.pl</code> and then trying again.</p>
+<p>as <code>pub.pl</code> runs, it will display its current status, printing a list of the files it is operating on. once it has finished, it will display the text <code>ok</code> and then return you to your shell.</p>
+<p>it might be useful to keep a shell open while you work on your website so you can quickly regenerate it. if you do this, it might be useful to know that you can re-run the last command simply by pressing the up arrow and then pressing <strong>Enter</strong> as usual.</p>
+<h2 id="output">output</h2>
+<p>the compiled forms of the input files are stored in the <code>out</code> folder. you can double-click on them to open them in a browser. to upload them to your web host, see <a href="upload.html">uploading</a>.</p>
+<h2 id="technical-details">technical details</h2>
+<p><code>pub.pl</code> is not a binary. as the name suggests, it is self-contained script written in the Perl programming language with no external dependencies besides the Perl interpreter. it should be broadly portable to any POSIX-compliant operating system, and it's possible it runs on Windows, at least under Cygwin. i don't know, haven't tried, and don't care.</p>
+<p><code>pub.pl</code> ignores all files and folders whose names begin with <code>.</code>, keeping out profligate nonsense like the <code>.DS_Store</code> files OSX so enjoys spamming all over every filesystem it gets its greasy hands on, and allowing you to place metadata of your own choosing inside the source tree.</p>
+<p>the source code of <code>pub.pl</code> is poorly commented and thorny as hell; it in general should be edited only with extreme care and looked upon only as a source of horrified amusement.</p>
+
+		</article>
+	</div>
+</body>
+</html>

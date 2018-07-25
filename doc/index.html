@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Evergreen</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<h1>Evergreen</h1>
+		<h2>Vin's Collected Writings</h2>
+	</header>
+	<div class="inset">
+		<nav>
+			<a href="../index.html">Home</a>
+			<a href="../about.html">About</a>
+			<a href="../stories/">Stories</a>
+			
+		</nav>
+		<article>
+			<h1 id="documentation">documentation</h1>
+<p>this page contains an overview of the Evergreen toolchain and links to more detailed information.</p>
+<h2 id="directory-hierarchy">directory hierarchy</h2>
+<p>the first thing to understand is how your Evergreen project is laid out.  its root directory contains three folders (<code>src</code>, <code>cfg</code>, and <code>out</code>) and the scripts <code>pub.pl</code> and <code>up.sh</code>.</p>
+<p>the <code>src</code> directory contains your <em>input files</em>. in other words, whenever you want to add something to the site, you'll do it by putting it in here. by default, it also contains the <code>doc</code> directory, which holds this documentation. you may want to move it somewhere else before you publish your real site, but leaving it in place won't do any harm.</p>
+<ul>
+<li><em>see: <a href="input-files.html">input files</a></em></li>
+</ul>
+<p>the <code>cfg</code> directory contains top-level configuration for the site. currently the only items here are <code>links</code> and <code>sitename</code>. both of these files can contain <em>comments</em>, which are text ignored by the software that builds the site. a line can be marked as a comment by starting it with whitespace (spaces or tabs). blank lines are ignored.</p>
+<ul>
+<li><code>links</code> is used to change the contents of the navigation bar just under the header. take a look at the file for a more detailed explanation of how to use it.</li>
+<li><code>sitename</code> contains one or two lines, a title and a subtitle for the site. these are printed at the top of every page.</li>
+</ul>
+<p><code>out</code> only exists if you have run <code>pub.pl</code> at least once. it contains a generated site ready to upload. <strong>never edit files in <code>out</code>!</strong> any changes you make will be overwritten as soon as you regenerate the site.</p>
+<h2 id="build-script">build script</h2>
+<p>the program that examines the input files and generates a site from them is <code>pub.pl</code>. whenever you change the configuration or the contents of <code>src</code>, you can run <code>pub.pl</code> to update <code>out</code> to reflect the changes.</p>
+<ul>
+<li><em>see: <a href="using-pub.html">using pub.pl</a></em></li>
+</ul>
+<p>whenever you run <code>pub.pl</code>, it iterates over everything in <code>src</code> and builds a matching directory tree in <code>out</code>. it populates this tree with the “compiled” form of each file it finds. see <a href="input-files.html">input files</a> for more information on this process.</p>
+<p><code>pub.pl</code> is the core of the toolchain and is the only thing you need to start a new Evergreen project, as long as you remember to put the configuration and input files in the right place.</p>
+<h2 id="upload-script">upload script</h2>
+<p>the file <code>up.sh</code> is a script that automates <a href="upload.html">uploading your site</a> to GitHub Pages.</p>
+
+		</article>
+	</div>
+</body>
+</html>

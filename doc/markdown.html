@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Evergreen</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<h1>Evergreen</h1>
+		<h2>Vin's Collected Writings</h2>
+	</header>
+	<div class="inset">
+		<nav>
+			<a href="../index.html">Home</a>
+			<a href="../about.html">About</a>
+			<a href="../stories/">Stories</a>
+			
+		</nav>
+		<article>
+			<h1 id="markdown">markdown</h1>
+<p><a href="https://daringfireball.net/projects/markdown/syntax">markdown</a> is a lightweight markup language ideal for static site generators. this page contains information on how to write markdown files. <code>pub.pl</code> uses a slightly modified version.</p>
+<h2 id="filetype">filetype</h2>
+<p>a markdown file is a <em>plain-text file</em> ending with the extension <code>.md</code>. you can create a file like this at the command line with a command like <code>touch file.md</code> or in a text editor like TextEdit or pluma. note that rich text editors like TextEdit must to explicitly told to switch to plain-text mode; the necessary command may be found in the “Format” menu, the save dialog, or elsewhere. consult your editor’s documentation for more information.</p>
+<h2 id="syntax">syntax</h2>
+<p>every <em>logical line</em> (that is, sequence of characters terminated by an <em>enter</em> or <em>return)</em> constitutes a separate paragraph.</p>
+<p>headers are added to markdown files with the <code>#</code> and <code>##</code> cues. any line starting with <code>#</code> is a top-level header (like the header above that says “markdown”). a line that starts with <code>##</code> is a second-level header</p>
+<h2 id="formatting">formatting</h2>
+<p>text can be formatted with the <code>*</code> characters. placing a pair of stars around a sequence of text makes the text <em>italic</em> (<code>*italic*</code>). placing a double pair of stars (<code>**</code>) around a phrase makes it <strong>bold</strong> (<code>**bold**</code>). finally, a <em>triple</em> pair of stars (<code>***</code>) makes it <strong><em>bold and italic</strong></em> (<code>***bold and italic***</code>).</p>
+<p>you can also use the <code>_</code> character to <u>underline</u> text (<code>_underline_</code>), although this should be used sparingly. conventionally, underlines on the internet denote links, and while the default stylesheet makes links and underlined text very distinct, they are probably still best avoided.</p>
+<p>code and other literals can be written by surrounding them with the character <code>`</code>, for instance, <code>src/index.md</code> (<code>`src/index.md`</code>).</p>
+<h2 id="lists">lists</h2>
+<p>markdown can create two types of lists, ordered lists and unordered lists.</p>
+<p>ordered lists are created by prefixing lines with a number followed by a <code>.</code>; e.g., <code>1. line one</code>; <code>2. line two</code>:</p>
+<ol>
+<li>line one</li>
+<li>line two</li>
+</ol>
+<p>unordered lists are created by placing an asterisk <code>*</code> at the start of the line; e.g. <code>* line one</code>; <code>* line two</code>:</p>
+<ul>
+<li>line one</li>
+<li>line two</li>
+</ul>
+<p>note that the asterisk <em>must</em> be followed by a space to distinguish a list entry from line-initial italics.</p>
+<h2 id="links">links</h2>
+<p>to add a link to another file or website, surround the <em>linked text</em> with square brackets and place a URL directly next to it in parentheses. for example, the link <a href="../index.html">index</a> is written <code>[index](/index.html)</code>. there cannot be a space between the <code>]</code> and <code>(</code>.</p>
+<p>you can link to other documents in the same site, external sites, sections of the same page, or sections of other pages. sections are denoted with the <code>#</code> character, so a link to <a href="#convenience-replacements">convenience replacements</a> can be written as <code>[convenience replacements](#convenience-replacements)</code>. a link from another page to this section could be written <code>[links](markdown.html#links)</code>.</p>
+<p><a href="path.html">addressing files</a> is fairly complex, and has its own section.</p>
+<h2 id="escapes">escapes</h2>
+<p>there's a small problem here - what if you need to include a literal <code>*</code> or <code>_</code> in a file, such as in an equation (12*2) or a function signature (<code>void do_things_with_stuff(struct stuff* s)</code>)? in this case, we use the standard <em>escape character</em>, the backslash <code> </code>.</p>
+<p>by placing a backslash in front of a formatting character (including another backslash), the character loses its special meaning, and becomes just another symbol (as in <code>void do\_things\_with\_stuff(struct stuff\* s)</code>) above. </p>
+<h2 id="horizontal-rule">horizontal rule</h2>
+<p>to separate two paragraphs with a line, you can put the sequence <code>-—</code> to generate a <em>horizontal rule:</em></p>
+<hr>
+<p>this is often used to indicate perspective breaks in stories or to separate unnamed sections in essays. note that the <code>---</code> sequence must occur on <em>its own line</em> with no other content.</p>
+<p>—- </p>
+<p> —-</p>
+<h2 id="convenience-replacements">convenience replacements</h2>
+<p>the sequence <code>--</code> is automatically transformed into an <em>em-dash</em> (—). this may be prevented by writing it as <code>-\-</code>.</p>
+<p>the character <code>x</code> is printed as a multiplication sign (×) when it occurs directly between two digits, as in 12×4 (<code>12×4</code>); this may be prevented by prefacing the <code>x</code> with a backslash, as in <code>12x4</code>.</p>
+<p>the sequence <code>-:-</code> is printed as a division sign (÷), as in 100÷10 (<code>100-:-10</code>); this may be prevented by prefacing the <code>:</code> with a backslash, as in <code>100-\:-10</code>.</p>
+
+		</article>
+	</div>
+</body>
+</html>

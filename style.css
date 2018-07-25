@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:100,400,700|Alegreya:400,700|Eczar:400,700');
+
+body {
+	background: #1D2520;
+	color: #dedede;
+	font-family: "Alegreya Sans", sans;
+	font-size: 14pt;
+	margin-top: 0;
+	margin: 0;
+	padding: 0;
+}
+.inset {
+	margin: 1em;
+}
+a[href] {
+	color: #65DE85;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px #233F2A;
+}
+a[href]:hover {
+	color: #9EECB2;
+	text-decoration: underline;
+}
+nav, article {
+	max-width: 40em;
+	margin: auto;
+	margin-bottom: 1em;
+}
+header {
+	padding: .5em 0;
+	text-align: center;
+	font-family: Eczar;
+	text-shadow: 0 0 30px #7EA388;
+	margin-bottom: 1em;
+	background:
+		linear-gradient(rgba(29,37,32,.4), #1D2520 105%),
+		url(header.png);
+	background-size: cover;
+}
+header h1 {
+	font-size: 30pt;
+	color: white;
+	margin: .3em;
+	font-weight: normal;
+}
+
+header h2 {
+	font-size: 20pt;
+	margin: .3em;
+	font-weight: normal;
+}
+
+nav a[href] {
+	display: block;
+	padding: .5em;
+	margin-bottom: .5em;
+	background-color: #2F3E34;
+	color: #ABFFC1;
+	font-weight: normal;
+	font-family: "Alegreya Sans", sans;
+	font-size: 15pt;
+	text-align: left;
+	opacity: 0.7;
+	border-bottom: 1px solid #191C1A;
+	text-shadow: 0 1px #191C1A;
+}
+nav a[href]:hover { opacity: 1; }
+nav a[href]:active { background-color: #28302B; color: #425B4C; }
+@media (min-width: 450px) {
+	nav {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	nav a[href] {
+		padding: 0.5em 1.5em;
+		margin-right: 1em;
+		margin-bottom: 0;
+		flex-grow: 1;
+		text-align: center;
+	}
+	nav a[href]:last-child { margin-right: 0; }
+}
+
+article {
+	display: block;
+	background-color: #364B3C;
+	padding-bottom: .5em;
+	text-align: justify;
+	margin-top: 1px;
+}
+article > * { padding: 0em 1em; }
+article p { margin-top: .7em; margin-bottom: 0; }
+article h1, article h2 {
+	font-family: Eczar;
+	font-weight: 100;
+}
+article h1 {
+	margin-top: 0;
+	font-size: 24pt;
+	border-bottom: 1px solid #1D2520;
+	color: white;
+	padding-left: .5em;
+	padding-top: .2em;
+	margin-bottom: 0;
+	text-shadow: 0 1px #191C1A;
+}
+article h2 {
+	font-size: 18pt;
+	border-top: 1px solid #1D2520;
+	padding-top: 0.1em;
+	margin-top: 1.5em;
+	padding-left: .5em;
+	margin-bottom: -0.5em; /* grrrrr */
+	color: #f0f0f0; 
+}
+hr {
+	height: 0;
+	border: none;
+	margin: .5em 2em;
+	border-bottom: 1px solid #7B9B84;
+	padding-bottom: 1px;
+}
+ol, ul {
+	margin-left: 2em;
+}
+li {
+	padding-bottom: .3em;
+}
+code {
+	font-family: monospace;
+	background-color: #4E6554;
+	padding: .05em .2em;
+	text-shadow: 0 1px #191C1A;
+	border-bottom: 1px solid #29382E;
+}

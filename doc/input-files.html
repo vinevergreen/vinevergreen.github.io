@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Evergreen</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<h1>Evergreen</h1>
+		<h2>Vin's Collected Writings</h2>
+	</header>
+	<div class="inset">
+		<nav>
+			<a href="../index.html">Home</a>
+			<a href="../about.html">About</a>
+			<a href="../stories/">Stories</a>
+			
+		</nav>
+		<article>
+			<h1 id="input-files">input files</h1>
+<p>whenever you want to add a page to your site, you add a corresponding file in <code>src</code>. <code>pub.pl</code> does different things to each file depending on its <em>extension</em>, that is, the string following the last <code>.</code> in a file's name. for instance, in the filename <code>index.md</code>, the extension is <code>md</code>. </p>
+<ul>
+<li><a href="markdown.html">markdown</a> (<code>md</code>): markdown is a lightweight, human-readable, human-writable syntax for adding formatting cues to plain-text documents. when <code>pub.pl</code> encounters a <code>.md</code> file, it formats it in HTML and saves the compiled version as a <code>.html</code> file. so for instance, if you have a file <code>src/index.md</code>, this will be compiled to <code>out/index.html</code>.</li>
+<li><strong>text files</strong> (<code>txt</code>): text files are handled similarly to markdown files except they are not processed for formatting cues. they are given a top-level header based on the filename and each line is split into a paragraph. there is no way to add formatting such as bold text, links, or lists.</li>
+<li><strong>HTML files</strong> (<code>html</code>): if you need more control than markdown can give you, you can place snippets of HTML code directly in the <code>src</code> directory tree. these should <em>not</em> be full HTML documents as their contents will be embedded in the standard page template. <code>html</code> files receieve no processing.</li>
+<li><strong>any other file types</strong>, including files with no extension, are copied raw to <code>out</code>. this includes things like images, stylesheets, audio, and video.</li>
+</ul>
+<p>if for whatever reason you need to include the raw, completely unformatted version of <code>md</code>, <code>txt</code>, or <code>html</code> file (such as to give your site a functional <code>robots.txt</code>), you can simply place <code>.raw</code> after the true file extension. for example, <code>src/robots.txt.raw</code> is copied unchanged to <code>out/robots.txt</code>.</p>
+
+		</article>
+	</div>
+</body>
+</html>

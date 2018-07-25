@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Evergreen</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<h1>Evergreen</h1>
+		<h2>Vin's Collected Writings</h2>
+	</header>
+	<div class="inset">
+		<nav>
+			<a href="../index.html">Home</a>
+			<a href="../about.html">About</a>
+			<a href="../stories/">Stories</a>
+			
+		</nav>
+		<article>
+			<h1 id="file-paths">file paths</h1>
+<p>a key concept in web design is the <em>file path</em>. a file path is simply a string that describes the location of a file in a filesystem. each directory (or "folder") that you have to open before you can reach the file is separated from the filename by a forward slash. so if you have a file <code>data</code> saved in the folder <code>b</code>, which itself is in the folder <code>a</code>, you would refer to it by the path <code>a/b/data</code>.</p>
+<p>when you reference one file from another (such as by <a href="markdown.html#links">linking</a> to it), it's important to note that the URL must be that of the <em>compiled address</em> of a file. while the file you are currently reading is named <code>markdown.md</code> behind the scenes, <code>pub.pl</code> generates an HTML file from it, with the name <code>markdown.html</code>. for more information on how filenames (and files) are transformed, see <a href="input-files.html">input files</a>.</p>
+<p>you can create both relative and absolute links. relative links are from the perspective of the directory that the current file is located it. so if you're editing a file in the same directory as the file you're linking to, you can simply write the name of the file. however, if it's in another directory, you might want to use an <em>absolute path:</em> any URL that begins with a <code>/</code> points to something in the root <code>src</code> directory. so the file <code>index.md</code> in the <code>docs</code> directory could be reached from here by the URL <code>index.html</code> <em>or</em> the URL <code>/docs/index.html</code> (<code>/index.html</code> being a different file entirely).</p>
+<p>if you need to link to something that's one directory up but don't want to use an absolute URL, you can instead use the <code>../</code> notation. <code>..</code> is a special directory link that points back up to parent of the current directory. since this file is located in the <code>/docs</code> directory, we could link from it to <code>index.md</code> as either <code>/index.html</code> or <code>../index.html</code>. in general, you should only do this if both this file and the other one are in a directory whose path is liable to be changed. as an example, all links between documentation files are relative, so the <code>doc</code> folder can be moved or renamed without breaking them.</p>
+<p>to link to a page on a completely different site, just copy the whole URL from your address bar (including the <code>http://</code> or <code>https://</code> part) and put it between the parentheses. for instance, this link to <a href="https://google.com">google</a> is written <code>[google](https://google.com)</code>.</p>
+<p>to give you a better sense of path syntax, here's a list of every file and directory in the default distribution with its full path. you can open up a file browser to see how this works, or open a <a href="using-pub.html">terminal</a>, <code>cd</code> to the project directory and run the <code>tree</code> command to see a visual print-out of the whole directory structure.</p>
+<ul>
+<li><code>/pub.pl</code></li>
+<li><code>/up.sh</code></li>
+<li><code>/cfg</code></li>
+<li><code>/cfg/links</code></li>
+<li><code>/cfg/sitename</code></li>
+<li><code>/src</code></li>
+<li><code>/src/index.md</code></li>
+<li><code>/src/style.css</code></li>
+<li><code>/src/header.png</code></li>
+<li><code>/src/doc</code></li>
+<li><code>/src/doc/index.md</code></li>
+<li><code>/src/doc/input-files.md</code></li>
+<li><code>/src/doc/markdown.md</code></li>
+<li><code>/src/doc/using-pub.md</code></li>
+
+		</article>
+	</div>
+</body>
+</html>
